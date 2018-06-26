@@ -48,14 +48,16 @@ function displayCelebGifs(){
              var celebDiv = $("<div>");
              celebDiv.addClass("cDiv");
              var p = $("<p>").text("Rating: " + results[i].rating);
-             var celebImage = $("<img id='cImage'>");
-             celebImage.attr("src", results[i].images.fixed_height_still.url);
+             var celebImage = $("<img id='cImage' height='200' width='200'>");
+             celebImage.attr("src", results[i].images.fixed_width_still.url);
              celebImage.attr("data-state", "still");
-             celebImage.attr("data-still", results[i].images.fixed_height_still.url);
-             celebImage.attr("data-animate", results[i].images.fixed_height.url);
+             celebImage.attr("data-still", results[i].images.fixed_width_still.url);
+             celebImage.attr("data-animate", results[i].images.fixed_width.url);
              celebDiv.append(celebImage);
              celebDiv.append(p);
-             $("#gif-display").prepend(celebDiv);  
+             $("#gif-display").prepend(celebDiv); 
+             $("#gif-display").css("border", "1px solid black");
+             $("#gif-display").css("border-radius", "20px");
          }
         });
 }
